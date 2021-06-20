@@ -24,3 +24,15 @@
   }
 }
 
+%column_style {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar {
+  @extend %column_style;
+  background-color: #dbfffa;
+  color: #555555;
+}
+

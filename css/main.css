@@ -19,4 +19,15 @@ body .container {
   color: white;
 }
 
+.sidebar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar {
+  background-color: #dbfffa;
+  color: #555555;
+}
+
 /*# sourceMappingURL=main.css.map */
