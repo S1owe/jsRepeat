@@ -1,11 +1,10 @@
+$text_color: #646464;
+
 .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  background-color: #03c5ff;
   transition: 0.5s ease;
 
   &:hover {
@@ -24,6 +23,12 @@
   }
 }
 
+.container_theme_blue {
+  width: 100px;
+  height: 100px;
+  background-color: #03c5ff;
+}
+
 %column_style {
   display: flex;
   align-items: center;
@@ -32,7 +37,103 @@
 
 .sidebar {
   @extend %column_style;
+  
   background-color: #dbfffa;
-  color: #555555;
+  color: $text_color;
 }
 
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.transform {
+  @include transform(rotate(45deg));
+
+  width: 100px;
+  height: 100px;
+  background-color: #cacaca;
+  border-radius: 30px;
+  margin: 30px;
+}
+
+$status_text: (
+        primary: #000,
+        success: #27BA6C,
+        info: #03a9f4,
+        warning: #FF8833,
+        danger: #ff1a1a
+);
+
+.messages {
+  font-size: 18px;
+}
+
+.message {
+  @each $status, $color in $status_text {
+    &_#{$status} {
+      color: $color;
+    }
+  }
+}
+
+.text {
+  font-size: 36px/2;
+
+  @if ($text_color == #646464) {
+    color: #44bbff;
+  } @else if($text_color == #ffffff) {
+    color: #4afffa;
+  } @else if($text_color == #bdbdbd) {
+    color: #66ffa8;
+  } @else {
+    color: #8eff34;
+  }
+}
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+}
+
+@for $i from 1 through 5 {
+  .elem-#{$i} {
+    font-size: 10px * $i;
+  }
+}
+
+$k: 10;
+@while $k > 0 {
+  .el_#{$k} { width: 5px * $k; }
+  $k: $k - 1;
+}
+
+$i: 8;
+@while $i > 0 {
+  .itemTest-#{$i} { width: 5px * $i; }
+  $i: $i - 2;
+}
+
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function grid-width($n) {
+  @return $n * $grid-width + ($n - 1) * $gutter-width;
+}
+
+#sidebar {
+  width: grid-width(5);
+}
+
+$e: 5;
+$q: 20;
+
+@function anyName($n) {
+  @return $e + $q + $n;
+}
+
+.anuElem {
+  font-size: anyName(100) + 0px;
+}
