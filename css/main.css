@@ -1,13 +1,12 @@
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.5s ease;
 }
 .container:hover {
   cursor: pointer;
-  background-color: #dcffed;
 }
 body .container {
   border-radius: 10px;
@@ -163,6 +162,37 @@ body .container {
 
 .anuElem {
   font-size: 125px;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: auto;
+}
+
+.grid_theme_1 {
+  grid-template-rows: 5em 200px 200px;
+  grid-template-columns: 25% 25% 50%;
+}
+
+.grid_elem {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  border: 1px solid #cdcdcd;
+  background-color: #ebebeb;
+  font-size: 24px;
+  color: #9b9b9b;
+}
+
+.header_size_big {
+  font-size: 24px;
+  padding: 40px 0 20px 0;
+}
+
+.grid_theme_2 {
+  grid-template-rows: 1fr 2fr auto;
+  grid-template-columns: 1fr 2fr;
 }
 
 /*# sourceMappingURL=main.css.map */
