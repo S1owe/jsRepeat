@@ -165,6 +165,31 @@ $q: 20;
 }
 
 .grid_theme_2 {
-  grid-template-rows: 1fr 2fr auto;
-  grid-template-columns: 1fr 2fr;
+  grid-template-areas:  "header header"
+                        "sidebar content"
+                        "sidebar content"
+                        "footer footer";
+  grid-template-rows: 50px 100px 100px 50px;
+  grid-template-columns: 150px 1fr;
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid_theme_3 {
+  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(3, 300px);
 }
