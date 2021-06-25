@@ -1,1 +1,1 @@
-# scssProject
+# jsProject
