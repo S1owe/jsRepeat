@@ -1,1 +1,1 @@
-console.log('This is repeat js');
+console.log('This is repeat js learning');
