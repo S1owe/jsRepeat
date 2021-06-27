@@ -82,7 +82,37 @@ const melancholyMagicSquare = [
 console.log(melancholyMagicSquare.toString());
 
 
+// Выражение x ?? y равно x, если x не равно ни undefined, ни null, а в противном случае равно y.
 
+let x = 10, y = 5;
+console.log(x ?? y);
+
+// Выражение x?.propertyName возвращает значение свойства x с именем propertyName, если x не равно ни undefined, ни null, а в противном случае undefined
+
+console.log(people?.name);
+
+// switch case
+let switchExample = "small";
+let resultSwitch = '';
+switch (switchExample) {
+    case 'big':
+        resultSwitch = 1;
+        break;
+
+    case 'normal':
+        resultSwitch = 2;
+        break;
+
+    case 'small':
+        resultSwitch = 3;
+        break;
+
+    default:
+
+        resultSwitch = 4;
+}
+
+console.log(resultSwitch);
 
 
 
