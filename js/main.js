@@ -114,6 +114,33 @@ switch (switchExample) {
 
 console.log(resultSwitch);
 
+// циклы
+console.log('---Circle---');
+
+for (let elem of numberMass) {
+    console.log(elem);
+}
+
+// Цикл for of нельзя использовать для обхода значений свойств произвольного
+// объекта, да это вряд ли и нужно – значения свойств обычно не имеют смысла
+// без ключей. Вместо этого можно обойти ключи в цикле for in:
+
+console.log('for in');
+
+let infoObject = {
+    sisters: false,
+    brothers: false,
+    gender: 'male',
+    age: 16,
+};
+
+for (let i in infoObject) {
+    console.log("key = " + i + ", value = " + infoObject[i]);
+}
+
+for (let i in numberMass) {
+    console.log(i + " : " + numberMass[i]);
+}
 
 
 
